@@ -1,7 +1,7 @@
 /* Methods.java            by Kevin W
  * 
  * public static int factorial(int n)
- *      This method takes a nonnegative integer as a parameter and returns the product n * (n – 1) * … * 2 * 1.
+ *      This method takes a nonnegative integer as a parameter and returns the product n * (n-1) * (n-2)... * 2 * 1
  * 
  * public static int firstDigit(int n)
  *     This method takes an integer as a parameter and returns the first numeric digit.
@@ -25,29 +25,40 @@
 
 public class Methods {
     public static void main(String[] args) {
-        // Test functions.
-        System.out.println("TESTING FACTORIALS!");
+        System.out.println("Testing factorial!");
         System.out.println(factorial(0)); // I googled it, and apparently factorial(0) is supposed to be 1???
         System.out.println(factorial(5)); // 120
         System.out.println(factorial(9)); // 362880
         System.out.println(factorial(6)); // 720
         System.out.println(factorial(3)); // 6
         
-        System.out.println("\nTESTING FIRST DIGIT!");
-        System.out.println(firstDigit(412)); // 4
+        System.out.println("\nTesting firstDigit!");
+        System.out.println(firstDigit(412));  // 4
         System.out.println(firstDigit(1253)); // 1
         System.out.println(firstDigit(9871)); // 9
         System.out.println(firstDigit(1252)); // 1
         System.out.println(firstDigit(9172)); // 9
         
-        System.out.println("\nTESTING ALL DIGITS ODD!");
-        System.out.println(allDigitsOdd(173));
+        System.out.println("\nTesting allDigitsOdd!");
+        System.out.println(allDigitsOdd(173));   // true
+        System.out.println(allDigitsOdd(12398)); // false
+        System.out.println(allDigitsOdd(11197)); // true
+        System.out.println(allDigitsOdd(2019));  // false
+        System.out.println(allDigitsOdd(1979));  // true
         
-        System.out.println("\nTESTING FACTORIALS!");
-        System.out.println(allDigitsSame(66666));
+        System.out.println("\nTesting allDigitsSame!");
+        System.out.println(allDigitsSame(66666));     // true
+        System.out.println(allDigitsSame(11191));     // false
+        System.out.println(allDigitsSame(1));         // true
+        System.out.println(allDigitsSame(981723));    // false
+        System.out.println(allDigitsSame(333333333)); // true 
         
-        System.out.println("\nTESTING FACTORIALS!");
-        System.out.println(hasMidpoint(6, 4, 8));
+        System.out.println("\nTesting hasMidpoint!");
+        System.out.println(hasMidpoint(6, 4, 8)); // true
+        System.out.println(hasMidpoint(2, 45, 92)); // false
+        System.out.println(hasMidpoint(3, 4, 5)); // true
+        System.out.println(hasMidpoint(6, 0, 7)); // false
+        System.out.println(hasMidpoint(17, 5, 11)); // true
     }
     
     
@@ -65,19 +76,31 @@ public class Methods {
     
     
     public static int firstDigit(int n) {
-        // Converts n into a string, takes the first character, then converts n BACK into an int.
-        return Integer.parseInt((n + "").substring(0, 1));
+        int result = n;
+        // This works because after the "/ 10", it's cut off to an int.
+        while (result >= 10) {
+            result /= 10;
+        }
+        return result;
+        /* I looked at StackOverflow, and I don't know if that counts as
+         * copying code, so I wrote something else.
+         * The StackOverflow code is commented out below.
+         * 
+         * return Integer.parseInt((n + "").substring(0, 1));
+         */
     }
     
     
     
     public static boolean allDigitsOdd(int n) {
+        int result = n;
         // Loop through every digit...
-        for (int i=0; i<(n+"").length(); i++) {
+        while (result >= 10) {
             // If the current digit is even..
-            if (Integer.parseInt((n + "").substring(i, i+1)) % 2 == 0) {
+            if ((result % 10) % 2 == 0) {
                 return false;
-            };
+            }
+            result /= 10;
         }
         
         // If we've looped through all the digits and haven't found an even digit, all the digits are odd.
@@ -87,14 +110,15 @@ public class Methods {
     
     
     public static boolean allDigitsSame(int n) {
+        int result = n;
         // Every single digit should be equal to the first digit.
-        int firstDigit = Integer.parseInt((n + "").substring(0, 1));
+        int lastDigit = result % 10;
         
-        // Loop through every digit...
-        for (int i=0; i<(n+"").length(); i++) {
-            if (Integer.parseInt((n + "").substring(i, i+1)) != firstDigit) {
+        while (result >= 10) {
+            if (result % 10 != lastDigit) {
                 return false;
             }
+            result /= 10;
         }
         return true;
     }
