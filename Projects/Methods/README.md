@@ -42,24 +42,23 @@ This project will be graded on:
 
 # Explanation
 
+[Factorial](https://github.com/PatheticMustan/Intro-To-Java-Files/blob/d629cccf514d749e7bca6ae4db72ff4d7efd94ac/Projects/Methods/Methods.java#L103)
 ```
 public static int factorial(int n)
   This method takes a nonnegative integer as a parameter and returns the product n * (n – 1) * ... * 2 * 1.
 ```
-factorial(0) is 1, so it should start as 1.
+HINT: factorial(0) is 1, so it should start as 1.
 
 Loop through 2-n, and multiply 1 by every single one of those numbers.
 
-[Link](https://github.com/PatheticMustan/Intro-To-Java-Files/blob/d629cccf514d749e7bca6ae4db72ff4d7efd94ac/Projects/Methods/Methods.java#L103)
-
+[FirstDigit](https://github.com/PatheticMustan/Intro-To-Java-Files/blob/d629cccf514d749e7bca6ae4db72ff4d7efd94ac/Projects/Methods/Methods.java#L114)
 ```
 public static int firstDigit(int n)
   This method takes an integer as a parameter and returns the first numeric digit.
 ```
 Because ints can only be whole numbers, you can just divide n by 10 until it's a single digit.
 
-[Link](https://github.com/PatheticMustan/Intro-To-Java-Files/blob/d629cccf514d749e7bca6ae4db72ff4d7efd94ac/Projects/Methods/Methods.java#L114)
-
+[AllDigitsOdd](https://github.com/PatheticMustan/Intro-To-Java-Files/blob/d629cccf514d749e7bca6ae4db72ff4d7efd94ac/Projects/Methods/Methods.java#L127)
 ```
 public static boolean allDigitsOdd(int n)
   This method takes an integer and returns true if all of the individual digits in the number are odd; false otherwise
@@ -67,8 +66,7 @@ public static boolean allDigitsOdd(int n)
 Loop through all the digits, and check if any of them are even. If they are, return false.
 Otherwise, return true.
 
-[Link](https://github.com/PatheticMustan/Intro-To-Java-Files/blob/d629cccf514d749e7bca6ae4db72ff4d7efd94ac/Projects/Methods/Methods.java#L127)
-
+[allDigitsSame](https://github.com/PatheticMustan/Intro-To-Java-Files/blob/d629cccf514d749e7bca6ae4db72ff4d7efd94ac/Projects/Methods/Methods.java#L143)
 ```
 public static boolean allDigitsSame(int n)
   This method takes an integer and returns true if all of the individual digits in the number are all odd or all even; 
@@ -76,8 +74,7 @@ public static boolean allDigitsSame(int n)
 ```
 Loop through all the digits, and check if they're all equal to the last digit.
 
-[Link](https://github.com/PatheticMustan/Intro-To-Java-Files/blob/d629cccf514d749e7bca6ae4db72ff4d7efd94ac/Projects/Methods/Methods.java#L143)
-
+[HasMidpoint](https://github.com/PatheticMustan/Intro-To-Java-Files/blob/d629cccf514d749e7bca6ae4db72ff4d7efd94ac/Projects/Methods/Methods.java#L158)
 ```
 public static boolean hasMidpoint(int a, int b, int c)
   This method takes three integers as parameters and returns true if the average of any two of them is the third.
@@ -85,5 +82,3 @@ public static boolean hasMidpoint(int a, int b, int c)
 HINT: `(a + b) / 2 == c` can be re-written as `a + b == c + c`.
 
 You also need to make sure your function works if a, b, and c are swapped around.
-
-[Link](https://github.com/PatheticMustan/Intro-To-Java-Files/blob/d629cccf514d749e7bca6ae4db72ff4d7efd94ac/Projects/Methods/Methods.java#L158)
