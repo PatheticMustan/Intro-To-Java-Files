@@ -141,14 +141,14 @@ public class Methods {
 	
 	
 	public static boolean allDigitsSame(int n) {
-		int result = n;
+		int number = n;
 		// Every single digit should be equal to the last digit.
-		int lastDigit = result % 10;
+		int lastDigit = number % 10;
 		
-		while (result >= 10) {
-			if (result % 10 != lastDigit)
+		while (number >= 10) {
+			if (number % 10 != lastDigit)
 				return false;
-			result /= 10;
+			number /= 10;
 		}
 		return true;
 	}
