@@ -50,11 +50,15 @@ factorial(0) is 1, so it should start as 1.
 
 Loop through 2-n, and multiply 1 by every single one of those numbers.
 
+[Link](https://github.com/PatheticMustan/Intro-To-Java-Files/blob/d629cccf514d749e7bca6ae4db72ff4d7efd94ac/Projects/Methods/Methods.java#L103)
+
 ```
 public static int firstDigit(int n)
   This method takes an integer as a parameter and returns the first numeric digit.
 ```
 Because ints can only be whole numbers, you can just divide n by 10 until it's a single digit.
+
+[Link](https://github.com/PatheticMustan/Intro-To-Java-Files/blob/d629cccf514d749e7bca6ae4db72ff4d7efd94ac/Projects/Methods/Methods.java#L114)
 
 ```
 public static boolean allDigitsOdd(int n)
@@ -63,12 +67,16 @@ public static boolean allDigitsOdd(int n)
 Loop through all the digits, and check if any of them are even. If they are, return false.
 Otherwise, return true.
 
+[Link](https://github.com/PatheticMustan/Intro-To-Java-Files/blob/d629cccf514d749e7bca6ae4db72ff4d7efd94ac/Projects/Methods/Methods.java#L127)
+
 ```
 public static boolean allDigitsSame(int n)
   This method takes an integer and returns true if all of the individual digits in the number are all odd or all even; 
   false otherwise
 ```
 Loop through all the digits, and check if they're all equal to the last digit.
+
+[Link](https://github.com/PatheticMustan/Intro-To-Java-Files/blob/d629cccf514d749e7bca6ae4db72ff4d7efd94ac/Projects/Methods/Methods.java#L143)
 
 ```
 public static boolean hasMidpoint(int a, int b, int c)
@@ -77,3 +85,5 @@ public static boolean hasMidpoint(int a, int b, int c)
 HINT: `(a + b) / 2 == c` can be re-written as `a + b == c + c`.
 
 You also need to make sure your function works if a, b, and c are swapped around.
+
+[Link](https://github.com/PatheticMustan/Intro-To-Java-Files/blob/d629cccf514d749e7bca6ae4db72ff4d7efd94ac/Projects/Methods/Methods.java#L158)
