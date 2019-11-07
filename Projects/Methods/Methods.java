@@ -142,15 +142,15 @@ public class Methods {
 	
 	public static boolean allDigitsSame(int n) {
 		int number = n;
-		// Every single digit should be equal to the last digit.
-		int lastDigit = number % 10;
-		
-		while (number >= 10) {
-			if (number % 10 != lastDigit)
-				return false;
-			number /= 10;
-		}
-		return true;
+        	// Every single digit should be even, or odd depending on the last number.
+        	boolean lastDigitEven = (number % 10) % 2 == 0;
+	
+	        while (number >= 10) {
+	            if (((number % 10) % 2 == 0) != lastDigitEven)
+	                return false;
+	            number /= 10;
+	        }
+	        return true;
 	}
 	
 	
