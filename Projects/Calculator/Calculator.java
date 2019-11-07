@@ -1,4 +1,4 @@
-/* MiniCalculator Project                by Kevin Wang
+/* Calculator Project                by Kevin Wang
  * 
  * This project will be graded on:
  * 1. Documentation (4 points): Your code must be fully commented and employ standard Java-style conventions.
@@ -17,7 +17,7 @@
 import java.util.Scanner;
 import java.lang.Math;
 
-public class MiniCalculator {
+public class Calculator {
     public static void main(String[] args) {
         // Make a new instance of the Scanner class (sc) that takes input from (System.in).
         Scanner sc = new Scanner(System.in);
