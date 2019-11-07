@@ -72,7 +72,7 @@ public static boolean allDigitsSame(int n)
   This method takes an integer and returns true if all of the individual digits in the number are all odd or all even; 
   false otherwise
 ```
-Loop through all the digits, and check if they're all equal to the last digit.
+Loop through all the digits, and check if they're all even/odd, just like the last digit.
 
 [HasMidpoint](https://github.com/PatheticMustan/Intro-To-Java-Files/blob/d629cccf514d749e7bca6ae4db72ff4d7efd94ac/Projects/Methods/Methods.java#L158)
 ```
