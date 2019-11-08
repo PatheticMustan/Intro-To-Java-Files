@@ -141,7 +141,7 @@ public class Methods {
         // Loop through every digit...
         while (result > 0) {
             // If the current digit is even..
-            if ((result % 10) % 2 == 0)
+            if (result % 2 == 0)
                 return false;
             result /= 10;
         }
@@ -155,10 +155,10 @@ public class Methods {
     public static boolean allDigitsSame(int n) {
         int number = n;
         // Every single digit should be even, or odd depending on the last number.
-        int lastDigitOdd = (number % 10) % 2;
+        int lastDigitOdd = number % 2;
 
         while (number >= 10) {
-            if (((number % 10) % 2) != lastDigitOdd)
+            if (number % 2 != lastDigitOdd)
                 return false;
             number /= 10;
         }
