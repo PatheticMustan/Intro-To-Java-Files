@@ -1,6 +1,7 @@
 # Compiled class file
 *.class
 *.java~
+.vscode/
 
 # Log file
 *.log
