@@ -25,8 +25,15 @@ import java.util.*;
 
 public class CaesarCipher {
     public static void main(String[] args) {
-        /*
+        // The examples that were originally given to us.
+        System.out.println(encode("HELLO", 5)); // gives MJQQT
+        System.out.println(decode("WORLD", 5)); // gives RJMGY
+        System.out.println(encode(decode("HELLO", 5), 5)); // gives HELLO
+        
+        
+        
         // Karen works at Walmart and scans your groceries.
+        // She'll scan your inputs and encode/decode Caesar's secret messages.
         Scanner karen = new Scanner(System.in);
         // Karen will scan your inputs now.
         System.out.println("Would you like to encode, or decode (1-2)?\n1. Encode\n2. Decode");
@@ -50,30 +57,54 @@ public class CaesarCipher {
         } else if (choice == 2) {
             System.out.println(decode(msg, shift));
         } else {
+            // Something impossible happened??? There's already a check that checks that the input is valid, but you can never be too careful...
             System.out.println("Something happened, Alice. Something weird and wonderful!");
         }
         
         
         
         // Karen closes walmart for the day. Good night, karen!
-        karen.close();*/
-        
-        System.out.println(encode("ABCDEF", 5));
+        karen.close();
     }
     
+    // The Encode/Decode methods are pretty much the same, but encode shifts the letters forward, while decode shifts the letters backwards.
     public static String encode(String str, int shift) {
+        String letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        // String.split("") is like String.toCharArray(), except that String.split("") results in an array of Strings,
+        // while String.toCharArray() results in a array of characters. I don't like characters, because it's weird and strange.
+        String[] message = str.split("");
+        String result = "";
+        
+        // Loop through every character,
+        for (int i=0; i<message.length; i++) {
+            String currentCharacter = Character.toString(letters.charAt((letters.indexOf(message[i].toUpperCase()) + shift) % 26));
+            
+            if (currentCharacter.equals(currentCharacter.toUpperCase())) {
+                result += currentCharacter.toUpperCase();
+            } else {
+                result += currentCharacter.toLowerCase();
+            }
+            
+        }
+
+        return result;
+    }
+    
+    
+        
+    public static String decode(String str, int shift) {
         String letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         String[] message = str.split("");
         String result = "";
         
         for (int i=0; i<message.length; i++) {
-            result += letters.charAt((letters.indexOf(message[i]) + shift) % 26);
+            int currentLetter = letters.indexOf(message[i]) - shift;
+            if (currentLetter < 0)
+                currentLetter += 26;
+            
+            result += letters.charAt(currentLetter);
         }
 
         return result;
-    }
-        
-    public static String decode(String str, int shift) {
-        return "test";
     }
 }
