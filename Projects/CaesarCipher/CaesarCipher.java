@@ -79,7 +79,7 @@ public class CaesarCipher {
         for (int i=0; i<message.length; i++) {
             String currentCharacter = Character.toString(letters.charAt((letters.indexOf(message[i].toUpperCase()) + shift) % 26));
             
-            if (currentCharacter.equals(currentCharacter.toUpperCase())) {
+            if (message[i].equals(message[i].toUpperCase())) {
                 result += currentCharacter.toUpperCase();
             } else {
                 result += currentCharacter.toLowerCase();
