@@ -23,6 +23,9 @@
  */
 import java.util.*;
 
+// What if I don't want to use normal Java style conventions? Naming conventions, fine.
+// BRACKET PLACEMENT IS MINE TO CONTROL!!! >:D
+
 public class CaesarCipher {
     public static void main(String[] args) {
         // The examples that were originally given to us.
@@ -77,14 +80,34 @@ public class CaesarCipher {
         
         // Loop through every character,
         for (int i=0; i<message.length; i++) {
-            String currentCharacter = Character.toString(letters.charAt((letters.indexOf(message[i].toUpperCase()) + shift) % 26));
-            
-            if (message[i].equals(message[i].toUpperCase())) {
-                result += currentCharacter.toUpperCase();
+            // If the current character is not a valid A-Za-z, just output it into the result.
+            if (letters.indexOf(message[i].toUpperCase()) == -1) {
+                // Sometimes I get confused between Java and Javascript. I just used === for strict type comparison, and didn't realize what was wrong...
+                result += message[i];
             } else {
-                result += currentCharacter.toLowerCase();
+                // A=0, B=1, C=2... Z=25
+                // Then we add the shift, wrap it around both ways, and change the number back to a letter.
+                int currentCharacter = (letters.indexOf(message[i].toUpperCase()) + shift) % 26; // Z => A should work.
+                // Just in case Shift is negative, because I'm still so mad I got a point off for "fail for negative" and "fail for 0".
+                // Like, BRUH WHAT MAKE IT CLEARER YOU WANT NEGATIVE AND ZEROS AS WELL WTF
+                while (currentCharacter < 0)
+                    currentCharacter += 26;
+                
+                // This basically preserves case from the original string, so encode("AaAa", 1) would return "BbBb"
+                if (message[i].equals(message[i].toUpperCase())) {
+                    /*
+                    * Ahaha! Big brain, is this not???
+                    * I need to convert the number back into a letter, but Java's being a pain in the booty,
+                    * and doesn't give me an easy way to convert a char to a String. I miss Javascript ;(
+                    * Instead of converting characters to Strings, then using .toUpperCase, I realized I could do .toUpperCase before
+                    * converting currentCharacter into a letter.Ahaha! I feel proud.
+                    */
+                    
+                    result += letters.toUpperCase().charAt(currentCharacter);
+                } else {
+                    result += letters.toLowerCase().charAt(currentCharacter);
+                }
             }
-            
         }
 
         return result;
@@ -96,13 +119,21 @@ public class CaesarCipher {
         String letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         String[] message = str.split("");
         String result = "";
-        
+
         for (int i=0; i<message.length; i++) {
-            int currentLetter = letters.indexOf(message[i]) - shift;
-            if (currentLetter < 0)
-                currentLetter += 26;
-            
-            result += letters.charAt(currentLetter);
+            if (letters.indexOf(message[i].toUpperCase()) == -1) {
+                result += message[i];
+            } else {
+                int currentCharacter = (letters.indexOf(message[i].toUpperCase()) - shift) % 26;
+                while (currentCharacter < 0)
+                    currentCharacter += 26;
+
+                if (message[i].equals(message[i].toUpperCase())) {
+                    result += letters.toUpperCase().charAt(currentCharacter);
+                } else {
+                    result += letters.toLowerCase().charAt(currentCharacter);
+                }
+            }
         }
 
         return result;
