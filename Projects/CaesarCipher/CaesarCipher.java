@@ -1,7 +1,7 @@
 /* CaesarCipher.java            by Kevin Wang
  * 
  * A Caesar Cipher is a method of encoding a message by shifting each character by the same number of letters.
- * For example, with a shift of 5, �A� would encode to �F�. In your main method, display a menu to ask the user if
+ * For example, with a shift of 5, 'A' would encode to 'F'. In your main method, display a menu to ask the user if
  * they want to encode or decode a phrase. Then ask the user for their shift value. The shift does not need to be
  * less than 26 but does need to be nonnegative. Assume that all messages will be uppercase only.
  * Your program must begin with a menu asking the user if they want to encode or decode a String.
@@ -29,14 +29,14 @@ import java.util.*;
 public class CaesarCipher {
     public static void main(String[] args) {
         // The examples that were originally given to us.
-        System.out.println(encode("HELLO", 5)); // gives MJQQT
-        System.out.println(decode("WORLD", 5)); // gives RJMGY
+        System.out.println(encode("HELLO", 5));            // gives MJQQT
+        System.out.println(decode("WORLD", 5));            // gives RJMGY
         System.out.println(encode(decode("HELLO", 5), 5)); // gives HELLO
         
         
         
         // Karen works at Walmart and scans your groceries.
-        // She'll scan your inputs and encode/decode Caesar's secret messages.
+        // She'll scan your inputs and encode/decode Caesar's secret messages, because she's part of a big conspiracy.
         Scanner karen = new Scanner(System.in);
         // Karen will scan your inputs now.
         System.out.println("Would you like to encode, or decode (1-2)?\n1. Encode\n2. Decode");
