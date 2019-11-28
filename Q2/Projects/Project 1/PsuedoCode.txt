@@ -1,0 +1,126 @@
+Pseudocode Legend:
+	(ProgramName)
+		Defines a program with the name "ProgramName"
+	[functionDefinition] with parameters (a, b, c)
+		Defines a function.
+	Set {number} to 42
+		Sets the variable "number" to 42
+	{number}
+		Gets the value of the variable "number"
+	Input "Hello World!"
+		Asks for input with a message.
+	Output "Hello World!"
+		Outputs a message.
+
+
+
+
+
+(Palindrome)
+	[main] with parameters (args)
+		1.	Set {repeat} to "yes"
+		2.	While {repeat} is either "yes", or "y":
+		3. 		Set {userInput} to (Input "Input a string to find if that string is a palindrome!")
+		4. 		Output [isPalindrome] with the parameter ({userInput})
+		5. 		Set {repeat} to (Input "Do you want to repeat? (y, or yes)")
+		
+	[reverseString] with parameters (str)
+		1.	Set {reversed} to ""
+		2.	Set {i} to the length of {str} minus 1
+		3.	If {i} is greater than 0:
+		4.		While {i} is greater than -1:
+		5.			Set {reversed} to {reversed} plus (The character in {str} with an index of {i}) 
+		6.			Set {i} to {i} minus 1
+		7.		Return {reversed}
+		8.	Return {str}
+
+	[isPalindrome] with parameters (str)
+			// If reversed and str are equal, str is a palindrome.
+		1.	Return {str} is equal to ({reverseString} with the parameter {str})
+
+
+
+
+
+(MailingLabel)
+	[main] with parameters (args)
+		1.	Set {delimiter} to (Input "Enter the delimiter string.")
+		2.	Set {userInput} to (Input "Input the mailing label seperated by the delimiter!")
+		3.	Output [mailingLabel] with the parameters ({userInput}, {delimiter})
+		
+	[mailingLabel] with parameters (str, del)
+		1.	Set {lineArray} to ({str} [split] with the parameter {del})
+		2.	Return ([String] [join] with the parameters ("\n", {lineArray}))
+
+
+
+
+
+(Zinnformatics)
+	[main] with parameters (args)
+		1.	Set {companyName} to (Input "Enter your company name.")
+		2.	Set {quantity} to (Input "How many packages would you like to order?")
+		3.	Set {discountDecimal} to 0
+		4.	If (({quantity} >= 10) and ({quantity} <= 19)):
+		5.		Set {discountDecimal} to 0.2
+		6.	Else If (({quantity} >= 20) and ({quantity} <= 49)):
+		7.		Set {discountDecimal} to 0.3
+		8.	Else If (({quantity} >= 50) and ({quantity} <= 99)):
+		9.		Set {discountDecimal} to 0.4
+		10.	Else If ({quantity} >= 100):
+		11.		Set {discountDecimal} to 0.5
+		12.	Output ("Thank you for your order "				plus
+				{companyName}						plus
+				"! You have ordered "					plus
+				{quantity}						plus
+				" packages, at a "					plus
+				{discount}						plus
+				"% discount. Your final cost will be $"			plus
+				{[zinnformatics] with the parameters ({quantity})}	plus
+				"."
+			)
+
+	[zinnformatics] with parameters (quantity)
+		1.	Return ((99 times {quantity}) minus ([discount] with the parameters ({quantity})))
+
+	[discount] with parameters (quantity)
+		1.	Set {discountDecimal} to 0
+		2.	If (({quantity} >= 10) and ({quantity} <= 19)):
+		3.		Set {discountDecimal} to 0.2
+		4.	Else If (({quantity} >= 20) and ({quantity} <= 49)):
+		5.		Set {discountDecimal} to 0.3
+		6.	Else If (({quantity} >= 50) and ({quantity} <= 99)):
+		7.		Set {discountDecimal} to 0.4
+		8.	Else If ({quantity} >= 100):
+		9.		Set {discountDecimal} to 0.5
+		10.	Return ((99 times {quantity}) times (1 minus {discountDecimal})) formatted as US Currency
+
+
+
+
+(CozaLozaWoza)
+	[main] with parameters (args)
+		1.	Set {n} to (Input "Enter an integer for CozaWozaLoza")
+		2.	Output ([cozaLozaWoza] with the parameter ({n}))
+
+	[cozaLozaWoza] with parameters (quantity)
+		1.	Set {output} to ""
+		2.	Set {i} to 1
+		3.	While {i} <= {quantity}:
+		4.		If (
+				({i} modulus 3 is not equal to 0) and
+				({i} modulus 5 is not equal to 0) and
+				({i} modulus 7 is not equal to 0)
+				):
+		5.			Set {output} to {output} plus {i}
+		6.		Else:
+		7.			If {i} % 3 == 0:
+		8.				Set {output} to {output} plus "Coza"
+		9.			If {i} % 5 == 0:
+		10.				Set {output} to {output} plus "Loza"
+		11.			If {i} % 7 == 0:
+		12.				Set {output} to {output} plus "Woza"
+		13.		If {i} % 11 == 0:
+		14.			Set {output} to {output} plus "\n"
+		15.		Else:
+		16.			Set {output} to {output} plus " "

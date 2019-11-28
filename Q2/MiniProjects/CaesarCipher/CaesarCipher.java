@@ -21,7 +21,7 @@
  * 
  * TOTAL: 16 points
  */
-import java.util.*;
+import javax.swing.*;
 
 // What if I don't want to use normal Java style conventions? Naming conventions, fine.
 // BRACKET PLACEMENT IS MINE TO CONTROL!!! >:D
@@ -37,37 +37,31 @@ public class CaesarCipher {
         
         // Karen works at Walmart and scans your groceries.
         // She'll scan your inputs and encode/decode Caesar's secret messages, because she's part of a big conspiracy.
-        Scanner karen = new Scanner(System.in);
+        JFrame karen = new JFrame();
         // Karen will scan your inputs now.
-        System.out.println("Would you like to encode, or decode (1-2)?\n1. Encode\n2. Decode");
-        int choice = karen.nextInt();
-        if (choice != 1 && choice != 2) 
-            System.out.println("Invalid operation! Pick either 1, or 2.");
+        int choice;
+        String text = "Would you like to encode, or decode (1-2)?\n1. Encode\n2. Decode";
+        do {
+            choice = Integer.parseInt(JOptionPane.showInputDialog(karen, text));
+            if (choice != 1 && choice != 2) 
+                text = "Invalid operation! Pick either 1, or 2.";
+        } while (choice != 1 && choice != 2);
         
-        // Take away that newline!
-        // There's an issue with calling Scanner#nextLine right after Scanner#nextInt, but I made a qwik fiks peu peu peu!
-        karen.nextLine();
+        String msg = JOptionPane.showInputDialog(karen, "What string would you like to shift?");
         
-        System.out.println("What string would you like to shift?");
-        String msg = karen.nextLine();
-        
-        System.out.println("How many characters would you like to shift?");
-        int shift = karen.nextInt();
+        // value, min, max, step
+        SpinnerNumberModel fidgetSpinner = new SpinnerNumberModel(0, -9001, 9001, 1);
+        int shift = Integer.parseInt(JOptionPane.showInputDialog(karen, "How many characters would you like to shift?"));
         
         // Encode/Decode the message now.
         if (choice == 1) {
-            System.out.println(encode(msg, shift));
+            JOptionPane.showMessageDialog(karen, (encode(msg, shift)));
         } else if (choice == 2) {
-            System.out.println(decode(msg, shift));
+            JOptionPane.showMessageDialog(karen, (decode(msg, shift)));
         } else {
             // Something impossible happened??? There's already a check that checks that the input is valid, but you can never be too careful...
             System.out.println("Something happened, Alice. Something weird and wonderful!");
         }
-        
-        
-        
-        // Karen closes walmart for the day. Good night, karen!
-        karen.close();
     }
     
     // The Encode/Decode methods are pretty much the same, but encode shifts the letters forward, while decode shifts the letters backwards.
@@ -124,6 +118,8 @@ public class CaesarCipher {
             if (letters.indexOf(message[i].toUpperCase()) == -1) {
                 result += message[i];
             } else {
+                // decode and encode are EXACTLY the same, except instead of "+shift", it's "-shift"
+                // There's also 
                 int currentCharacter = (letters.indexOf(message[i].toUpperCase()) - shift) % 26;
                 while (currentCharacter < 0)
                     currentCharacter += 26;
