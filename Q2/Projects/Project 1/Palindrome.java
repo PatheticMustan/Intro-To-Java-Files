@@ -2,8 +2,8 @@
  * Checks if a string is a palindrome.
  * (Palindrome) 26 POINTS
  *     Write a program called Palindrome, which prompts user for a String, and determines whether or not it is a palindrome.
- *         ? Have the user input a string into an input box
- *         ? Output the result through a message box.
+ *         * Have the user input a string into an input box
+ *         * Output the result through a message box.
  *     Your program must contain methods with the following signatures:
  *         public static String reverseString(String str)
  *         public static boolean isPalindrome(String str)
