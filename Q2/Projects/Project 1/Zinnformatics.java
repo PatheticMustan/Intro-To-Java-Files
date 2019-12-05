@@ -1,23 +1,23 @@
 /* Zinnformatics.java            by Kevin Wang
- * (Zinnformatics) 28 POINTS
- *     Zinnformatics Products, Inc. is selling a web-design software package that retails for $99.00. Quantity discounts are given according to the following table:
- * 
- *     Quantity Discount
- *         10-19 20%
- *         20-49 30%
- *         50-99 40%
- *         100 or more 50%
- * 
- *     Write a Java program that performs the following tasks:
- *         * Have the user input the company name.
- *         * Have the user input the number of packages that they would like to order.
- *         * Output a final "invoice" through a message box, using the format indicated in the sample below:
- *             - "Thank you for your order Great Neck South High School! You have ordered 40 packages, at a 30% discount. Your final cost will be $2772.00."
- *         * Note: Keep in mind that the dollar value should be formatted, according to the above example.
- * 
- * Your program must contain methods with the following signatures:
- *     public static double zinnformatics(int quantity) //returns cost
- *     public static double discount(int quantity) //return decimal value, not percent
+ *     (Zinnformatics) 28 POINTS
+ *         Zinnformatics Products, Inc. is selling a web-design software package that retails for $99.00. Quantity discounts are given according to the following table:
+ *     
+ *         Quantity Discount
+ *             10-19 20%
+ *             20-49 30%
+ *             50-99 40%
+ *             100 or more 50%
+ *     
+ *         Write a Java program that performs the following tasks:
+ *             * Have the user input the company name.
+ *             * Have the user input the number of packages that they would like to order.
+ *             * Output a final "invoice" through a message box, using the format indicated in the sample below:
+ *                 - "Thank you for your order Great Neck South High School! You have ordered 40 packages, at a 30% discount. Your final cost will be $2772.00."
+ *             * Note: Keep in mind that the dollar value should be formatted, according to the above example.
+ *     
+ *     Your program must contain methods with the following signatures:
+ *         public static double zinnformatics(int quantity) //returns cost
+ *         public static double discount(int quantity) //return decimal value, not percent
  */
 
 import javax.swing.JOptionPane;
