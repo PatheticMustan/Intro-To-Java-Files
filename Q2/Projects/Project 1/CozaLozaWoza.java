@@ -31,7 +31,7 @@ public class CozaLozaWoza {
         String result = "";
         
         for (int i=1; i<=n; i++) {
-            // We do things if the number is divisible by 3, 5, 7, or 11.
+            // We replace the number if the number is divisible by 3, 5, or 7.
             if (i % 3 == 0 || i % 5 == 0 || i % 7 == 0) {
                 if (i % 3 == 0) result += "Coza";
                 if (i % 5 == 0) result += "Loza";
@@ -44,6 +44,7 @@ public class CozaLozaWoza {
             if (i % 11 == 0) {
                 result += "\n";
             } else if (i != n) {
+                // We don't want a space at the end of our string, so check if we're at the last iteration
                 result += " ";
             }
         }
