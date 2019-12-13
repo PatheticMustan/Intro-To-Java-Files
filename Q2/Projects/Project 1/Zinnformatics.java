@@ -31,14 +31,6 @@ public class Zinnformatics {
             String companyName = JOptionPane.showInputDialog("Input a String, the company name!");
             int quantity = Integer.parseInt(JOptionPane.showInputDialog("Input an integer, the number of packages you would like to order!"));
             
-            // Gets the discount.
-            double discount = 0;
-        
-            if (10 <= quantity && quantity <= 19) discount = 0.2; // 20%
-            else if (20 <= quantity && quantity <= 49) discount = 0.3; // 30%
-            else if (50 <= quantity && quantity <= 99) discount = 0.4; // 40%
-            else if (100 <= quantity) discount = 0.5; // 50%
-            
             // Outputs the results.
             JOptionPane.showMessageDialog(
                                           null,
@@ -47,7 +39,7 @@ public class Zinnformatics {
                                           "! You have ordered " +
                                           quantity +
                                           " packages, at a " +
-                                          (int)(discount * 100) +
+                                          (int)(discount(quantity) * 100) +
                                           "% discount. Your final cost will be $" +
                                           String.format("%,.2f", zinnformatics(quantity)) +
                                           "."
@@ -60,7 +52,7 @@ public class Zinnformatics {
     
     //returns cost
     public static double zinnformatics(int quantity) {
-        return (quantity * 99) - discount(quantity);
+        return (quantity * 99) * (1 - discount(quantity));
     }
     
     //return decimal value, not percent
@@ -72,6 +64,6 @@ public class Zinnformatics {
         else if (50 <= quantity && quantity <= 99) discount = 0.4; // 40%
         else if (100 <= quantity) discount = 0.5; // 50%
         
-        return (quantity * 99) * discount;
+        return discount;
     }
 }

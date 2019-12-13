@@ -27,6 +27,8 @@ public class CozaLozaWoza {
         } while (repeat == JOptionPane.YES_OPTION);
     }
     
+    
+    
     public static String cozaLozaWoza(int n) {
         String result = "";
         
