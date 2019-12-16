@@ -4,7 +4,7 @@
  *         elements of information. An example of this is a Microsoft Excel CSV (Comma Separated Values) file.
  *         Write a Java program that performs the following tasks:
  *             * Asks the user to input their chosen delimiter
- *             * Asks the user to input the delimited string, which holds a person’s name and address, as input
+ *             * Asks the user to input the delimited string, which holds a personâ€™s name and address, as input
  *             * Prints a mailing label as output.
  * 
  *     Sample: Input: "Jose Reyes:13-07 Estates Lane:Bayside, NY 11360"
@@ -19,6 +19,7 @@
  */
 
 import javax.swing.JOptionPane;
+import java.util.regex.Pattern;
 
 public class MailingLabel {
     public static void main(String[] args) {
@@ -49,7 +50,7 @@ public class MailingLabel {
          * 
          * This solution is shorter, and cleaner, but I decided to stick with my original solution, cuz it's still cool.
          */
-        return String.join("\n", str.split(del));
+        return String.join("\n", str.split(Pattern.quote(del)));
     }
 }
 
