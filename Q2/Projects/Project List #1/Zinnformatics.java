@@ -23,6 +23,7 @@
 import javax.swing.JOptionPane;
 
 public class Zinnformatics {
+    // The Main function asks for input, and makes the output pretty.
     public static void main(String[] args) {
         int repeat;
         // User controlled exit.
@@ -31,7 +32,7 @@ public class Zinnformatics {
             String companyName = JOptionPane.showInputDialog("Input a String, the company name!");
             int quantity = Integer.parseInt(JOptionPane.showInputDialog("Input an integer, the number of packages you would like to order!"));
             
-            // Outputs the results.
+            // Outputs the results, in a pretty and neat way.
             JOptionPane.showMessageDialog(
                                           null,
                                           "Thank you for your order " +
@@ -50,14 +51,19 @@ public class Zinnformatics {
         } while (repeat == JOptionPane.YES_OPTION);
     }
     
-    //returns cost
+    
+    
+    // Return final cost, after the discount using the discount() function.
     public static double zinnformatics(int quantity) {
         return (quantity * 99) * (1 - discount(quantity));
     }
     
-    //return decimal value, not percent
+    
+    
+    // Return the discount percentage but as a decimal. A 20% discount would return 0.2, and a 50% discount would return 0.5!
     public static double discount(int quantity) {
         double discount = 0;
+        
         
         if (10 <= quantity && quantity <= 19) discount = 0.2; // 20%
         else if (20 <= quantity && quantity <= 49) discount = 0.3; // 30%

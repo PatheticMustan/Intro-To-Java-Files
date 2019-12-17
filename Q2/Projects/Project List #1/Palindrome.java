@@ -12,6 +12,7 @@
 import javax.swing.JOptionPane;
 
 public class Palindrome {
+    // The Main function asks for input, and makes the output pretty and all.
     public static void main(String[] args) {
         int repeat;
         // User controlled exit.
@@ -19,7 +20,7 @@ public class Palindrome {
             // Asks for input.
             String userInput = JOptionPane.showInputDialog("Input a string to find if that string is a palindrome!");
             
-            // Outputs the results.
+            // Outputs the results but pretty hui hui hui
             JOptionPane.showMessageDialog(null,
                                           "Original: " + userInput +
                                           "\nFlipped: " + reverseString(userInput) +
@@ -35,7 +36,7 @@ public class Palindrome {
     public static String reverseString(String str) {
         String reversed = "";
         
-        // Loops over the string backwards.
+        // Loops over the string backwards, and gets the character at (i)
         for (int i=str.length()-1; i>=0; i--) {
             reversed += str.charAt(i);
         }
