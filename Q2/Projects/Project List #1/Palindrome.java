@@ -24,7 +24,7 @@ public class Palindrome {
             JOptionPane.showMessageDialog(null,
                                           "Original: " + userInput +
                                           "\nFlipped: " + reverseString(userInput) +
-                                          "\nIs the string a palindrome?: " + isPalindrome(userInput) + ""
+                                          "\nIs the string a palindrome?: " + isPalindrome(userInput) + "."
                                          );
             
             // Asks user if they want to continue.

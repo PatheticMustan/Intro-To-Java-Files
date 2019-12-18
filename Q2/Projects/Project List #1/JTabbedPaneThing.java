@@ -29,28 +29,32 @@ public class JTabbedPaneThing {
         
         // Sleep deprived-please send help I'm dying inside I don't understand why we need JFrame and JTabbedPane
         JFrame frame = new JFrame("All my java programs");
-        JTabbedPane tp = new JTabbedPane();
+        JTabbedPane tp = new JTabbedPane(JTabbedPane.LEFT);
         
         // create the palindrome pane
-        JPanel paliPanel = new JPanel();
-        JTextArea paliText = new JTextArea("racecar UwU racecar OwO racecar UwU racecar");
-        paliText.setLineWrap(true);
+        JPanel paliPanel = new JPanel((LayoutManager) new FlowLayout(FlowLayout.LEFT));
+        JTextField paliText = new JTextField();
+        paliText.setMaximumSize(new Dimension(1000,20));
         paliText.setColumns(10);
         
         JButton paliButton = new JButton("Start");
-        JLabel result = new JLabel("Palindrome:");
+        JLabel paliResult = new JLabel("");
         
         
         paliButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                System.out.println("I was clicked!");
+                paliResult.setText(
+                    "Original: " + paliText.getText() +
+                    "\nFlipped: " + pali.reverseString(paliText.getText()) +
+                    "\nIs the string a palindrome?: " + pali.isPalindrome(paliText.getText()) + "."
+                                       );
             }
         });
         
         paliPanel.add(new JLabel("Palindrome:"));
         paliPanel.add(paliText);
         paliPanel.add(paliButton);
-        paliPanel.add(result);
+        paliPanel.add(paliResult);
         
         
         
@@ -83,7 +87,7 @@ public class JTabbedPaneThing {
         
         // 420 haha funny funny
         // This actually was a coincidence, because I was looking for a width to fit all 4 tabs.
-        frame.setSize(420, 300);
+        frame.setSize(1000, 500);
         frame.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
         frame.setVisible(true);
     }
