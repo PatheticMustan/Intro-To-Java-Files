@@ -81,7 +81,7 @@ Pseudocode Legend:
 			)
 
 	[zinnformatics] with parameters (quantity)
-		1.	Return ((99 times {quantity}) minus ([discount] with the parameters ({quantity})))
+		1.	Return ({quantity} times 99) times (1 minus {discount} with parameter {quantity})
 
 	[discount] with parameters (quantity)
 		1.	Set {discountDecimal} to 0
@@ -93,7 +93,7 @@ Pseudocode Legend:
 		7.		Set {discountDecimal} to 0.4
 		8.	Else If ({quantity} >= 100):
 		9.		Set {discountDecimal} to 0.5
-		10.	Return ((99 times {quantity}) times (1 minus {discountDecimal})) formatted as US Currency
+		10.	Return {discountDecimal}
 
 
 
@@ -114,13 +114,13 @@ Pseudocode Legend:
 				):
 		5.			Set {output} to {output} plus {i}
 		6.		Else:
-		7.			If {i} % 3 == 0:
+		7.			If {i} modulus 3 is equal to 0:
 		8.				Set {output} to {output} plus "Coza"
-		9.			If {i} % 5 == 0:
+		9.			If {i} modulus 5 is equal to 0:
 		10.				Set {output} to {output} plus "Loza"
-		11.			If {i} % 7 == 0:
+		11.			If {i} modulus 7 is equal to 0:
 		12.				Set {output} to {output} plus "Woza"
-		13.		If {i} % 11 == 0:
+		13.		If {i} modulus 11 is equal to 0:
 		14.			Set {output} to {output} plus "\n"
 		15.		Else:
 		16.			Set {output} to {output} plus " "

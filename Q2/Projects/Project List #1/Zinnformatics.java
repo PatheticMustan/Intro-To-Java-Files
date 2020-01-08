@@ -64,7 +64,6 @@ public class Zinnformatics {
     public static double discount(int quantity) {
         double discount = 0;
         
-        
         if (10 <= quantity && quantity <= 19) discount = 0.2; // 20%
         else if (20 <= quantity && quantity <= 49) discount = 0.3; // 30%
         else if (50 <= quantity && quantity <= 99) discount = 0.4; // 40%
