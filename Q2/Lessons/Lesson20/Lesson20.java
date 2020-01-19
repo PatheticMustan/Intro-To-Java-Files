@@ -67,4 +67,3 @@ public class Lesson20 {
         
         return sum;
     }
-}
