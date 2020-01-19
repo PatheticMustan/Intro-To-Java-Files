@@ -5,7 +5,7 @@ public class StudentDriver {
         kevin.setName("Kevin");
         kevin.setAge(14);
         kevin.setGrade(9);
-        /// OH MY GOD IT'S    S A T A N    T H E   G I F T   G I V E R   PLEASE TAKE MERCYYYYYY
+        /// OH MY GOD IT'S    S A T A N    T H E   G I F T   G I V E R   PLEASE TAKE MERCY ON MY SOUL
         kevin.setNumberOfAbsences(666);
         // While 42 is an F, it is also the meaning of life
         kevin.setAverage(42);
@@ -23,7 +23,9 @@ public class StudentDriver {
         william.setAverage(90);
         
         System.out.println(william + "\n\n\n");
-        
+        // and   S P R E A D
+        // thank you, I am the WarOwl, and I still have no closer.
+        // DUN DUN DUN DUN donn donnnn
         
         
         Student treeSpirit = new Student();
@@ -36,6 +38,6 @@ public class StudentDriver {
         // Tree spirits are smart.
         treeSpirit.setAverage(100);
         
-        System.out.println(treeSpirit + "\n\n\n");
+        System.out.println(treeSpirit);
     }
 }
