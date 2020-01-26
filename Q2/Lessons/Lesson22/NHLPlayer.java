@@ -7,6 +7,7 @@
  *     o A city of birth
  */
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class NHLPlayer {
@@ -18,8 +19,8 @@ public class NHLPlayer {
     
     public NHLPlayer() {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-        String dateString = format.format( new Date()   );
-        Date   date       = format.parse ( "2009-12-31" );    
+        String dateString = format.format(new Date());
+        Date   date       = format.parse ("2009-12-31");    
         
         playerName = "";
         playerNumber = 0;
