@@ -28,7 +28,15 @@ public class Bank {
         this.branch = branch;
     }
     
+    // GS Name
+    public String getName() {return name;}
+    public void setName(String name) {this.name = name;}
+    // GS Branch
+    public Branch getBranch() {return branch;}
+    public void setBranch(Branch branch) {this.branch = branch;}
+    
+    
     public String toString() {
-        return name + ": " + branch;
+        return name + "\n" + branch;
     }
 }

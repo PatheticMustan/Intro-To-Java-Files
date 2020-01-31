@@ -23,6 +23,7 @@ public class Branch {
     private String address;
     private String phoneNumber;
     private BankTeller bankTeller;
+    private static int branchCount = 0;
     
     public Branch(String address, String phoneNumber, BankTeller bankTeller) {
         this.address = address;
@@ -30,7 +31,21 @@ public class Branch {
         this.bankTeller = bankTeller;
     }
     
+    // GS Address
+    public String getAddress() {return address;}
+    public void setAddress(String address) {this.address = address;}
+    // GS PhoneNumber
+    public String getPhoneNumber() {return phoneNumber;}
+    public void setPhoneNumber(String phoneNumber) {this.phoneNumber = phoneNumber;}
+    // GS BankTeller
+    public BankTeller getBankTeller() {return bankTeller;}
+    public void setBankTeller(BankTeller bankTeller) {this.bankTeller = bankTeller;}
+    
+    public static int getCount() {
+        return branchCount;
+    }
+    
     public String toString() {
-        return address + ": " + phoneNumber + ": " + bankTeller;
+        return "\t" + address + "\n\t" + phoneNumber + "\n\t" + bankTeller;
     }
 }

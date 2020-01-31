@@ -54,24 +54,24 @@ public class BankDriver {
         CustomerAccount missSaigon = new CustomerAccount(
             "Miss Saigon",
             "1234567890",
-            "123ChrisIHaveYourSon456",
-            -169,
+            "ChrisIHaveYourSonWontYouPleaseSitDown",
+            -420,
             "Personal"
         );
         
         CustomerAccount natsumi = new CustomerAccount(
             "Natsumi Hamasaki",
-            "9876543210",
+            "20208090202",
             "NatsumiIsTheBestBoy",
-            666,
+            6969,
             "Savings"
         );
         
         CustomerAccount monika = new CustomerAccount(
             "Monika Koide-Nicolaides",
-            "6666666666",
+            "10707000103",
             "JUSTMONIKAJUSTMONIKA",
-            999999999,
+            666666,
             "Admin"
         );
         

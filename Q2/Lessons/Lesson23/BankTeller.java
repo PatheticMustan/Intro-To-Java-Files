@@ -22,24 +22,31 @@
 public class BankTeller {
     private String name;
     private String tellerID;
+    private static int akiraCount = 0; // Every day we stray further from god
     
     public BankTeller(String name, String tellerID) {
         this.name = name;
         this.tellerID = tellerID;
+        akiraCount++; // One more Akira is born into the world.
     }
     
-    // get/set instance variables
+    // GS Name
     public String getName() {return name;}
     public void setName(String name) {this.name = name;}
+    // GS TellerID
     public String getTellerID() {return tellerID;}
     public void setTellerID(String tellerID) {this.tellerID = tellerID;}
     
-    // get acc balance
+    // GS Balance
     public float getBalance(CustomerAccount customer) {return customer.getBalance();}
     public void deposit(CustomerAccount customer, float amount) {customer.setBalance(getBalance(customer) + amount);}
     public void withdraw(CustomerAccount customer, float amount) {customer.setBalance(getBalance(customer) - amount);}
     
+    public static int getCount() {
+        return akiraCount;
+    }
+    
     public String toString() {
-        return name + ": " + tellerID;
+        return "\t" + name + "\n\t\t" + tellerID;
     }
 }

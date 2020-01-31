@@ -34,10 +34,23 @@ public class CustomerAccount {
         this.accountType = accountType;
     }
     
+    // GS Name
+    public String getName() {return name;}
+    public void setName(String name) {this.name = name;}
+    // GS AccountNumber
+    public String getAccountNumber() {return accountNumber;}
+    public void setAccountNumber(String accountNumber) {this.accountNumber = accountNumber;}
+    // GS IDNumber
+    public String getIDNumber() {return idNumber;}
+    public void setIDNumber(String idNumber) {this.idNumber = idNumber;}
+    // GS Balance
     public float getBalance() {return balance;}
     public void setBalance(float balance) {this.balance = balance;}
+    // GS AccountType
+    public String getAccountType() {return accountType;}
+    public void setAccountType(String accountType) {this.accountType = accountType;}
     
     public String toString() {
-        return name + ": " + accountNumber + ": " + idNumber + ": " + balance + ": " + accountType;
+        return name + "\n\t" + accountNumber + "\n\t" + idNumber + "\n\t" + balance + "\n\t" + accountType;
     }
 }
