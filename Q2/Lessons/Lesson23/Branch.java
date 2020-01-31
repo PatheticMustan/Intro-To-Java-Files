@@ -4,7 +4,6 @@
  * 1. BankTeller
  *     a. name
  *     b. teller ID
- * 
  * 2. Bank
  *     a. name
  *     b. Branch

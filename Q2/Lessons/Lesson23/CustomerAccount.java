@@ -4,7 +4,6 @@
  * 1. BankTeller
  *     a. name
  *     b. teller ID
- * 
  * 2. Bank
  *     a. name
  *     b. Branch
@@ -22,14 +21,23 @@
 
 public class CustomerAccount {
     private String name;
-    private Branch branch;
+    private String accountNumber;
+    private String idNumber;
+    private float balance;
+    private String accountType;
     
-    public CustomerAccount(String name, Branch branch) {
+    public CustomerAccount(String name, String accountNumber, String idNumber, float balance, String accountType) {
         this.name = name;
-        this.branch= branch;
+        this.accountNumber = accountNumber;
+        this.idNumber = idNumber;
+        this.balance = balance;
+        this.accountType = accountType;
     }
     
+    public float getBalance() {return balance;}
+    public void setBalance(float balance) {this.balance = balance;}
+    
     public String toString() {
-        return name + ": " + branch;
+        return name + ": " + accountNumber + ": " + idNumber + ": " + balance + ": " + accountType;
     }
 }

@@ -4,7 +4,6 @@
  * 1. BankTeller
  *     a. name
  *     b. teller ID
- * 
  * 2. Bank
  *     a. name
  *     b. Branch
@@ -26,7 +25,7 @@ public class Bank {
     
     public Bank(String name, Branch branch) {
         this.name = name;
-        this.branch= branch;
+        this.branch = branch;
     }
     
     public String toString() {
