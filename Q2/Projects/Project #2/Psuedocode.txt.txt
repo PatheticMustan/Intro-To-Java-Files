@@ -1,0 +1,51 @@
+removeWhitespaceAndConvertToUpper(string)
+	Return string#trim()#toUpperCase()
+
+substitute(string)
+	Set string to string#replace(A with @)
+	Set string to string#replace(E with =)
+	Set string to string#replace(I with !)
+	Set string to string#replace(J with ?)
+	Set string to string#replace(O with *)
+	Set string to string#replace(P with #)
+	Set string to string#replace(R with &)
+	Set string to string#replace(S with $)
+	Set string to string#replace(T with +)
+	Set string to string#replace(V with ^)
+	Set string to string#replace(X with %)
+	Return string
+
+
+swapHalfsForEncrypt(string)
+	Set half to Math#ceiling(string#length divided by 2)
+	Set len to string#length
+	Return
+		string#splice(from 0 to half) plus
+		string#splice(from half to len)
+
+
+swapFirst2WithLast2(string)
+	Set len to string#length
+	Return
+		string#splice(from len minus 2 to len) plus
+		string#splice(from 2 to len minus 2)   plus
+		string#splice(from 0 to 2)
+
+
+swapMiddleChars(string)
+	Set half to Math#ceiling(string#length divided by 2)
+	Return
+		string#splice(from 0 to half minus 2)   plus
+		string#splice(from half to half plus 2) plus
+		string#splice(half minus 2 to half)     plus
+		string#splice(from half plus 2 to len)
+
+encrypt(string)
+	Set result to string
+	Set result to removeWhitespaceAndConvertToUpper(result)
+	Set result to subsitute(result)
+	Set result to swapHalfsForEncrypt(result)
+	Set result to swapFirst2WithLast2(result)
+	Set result to swapMiddleChars(result)
+
+	Return result
