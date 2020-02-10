@@ -20,25 +20,25 @@ swapHalfsForEncrypt(string)
 	Set half to Math#ceiling(string#length divided by 2)
 	Set len to string#length
 	Return
-		string#splice(from 0 to half) plus
-		string#splice(from half to len)
+		string#substring(from 0 to half) plus
+		string#substring(from half to len)
 
 
 swapFirst2WithLast2(string)
 	Set len to string#length
 	Return
-		string#splice(from len minus 2 to len) plus
-		string#splice(from 2 to len minus 2)   plus
-		string#splice(from 0 to 2)
+		string#substring(from len minus 2 to len) plus
+		string#substring(from 2 to len minus 2)   plus
+		string#substring(from 0 to 2)
 
 
 swapMiddleChars(string)
 	Set half to Math#ceiling(string#length divided by 2)
 	Return
-		string#splice(from 0 to half minus 2)   plus
-		string#splice(from half to half plus 2) plus
-		string#splice(half minus 2 to half)     plus
-		string#splice(from half plus 2 to len)
+		string#substring(from 0 to half minus 2)   plus
+		string#substring(from half to half plus 2) plus
+		string#substring(half minus 2 to half)     plus
+		string#substring(from half plus 2 to len)
 
 encrypt(string)
 	Set result to string
