@@ -16,9 +16,20 @@ public class UserInfoDriver {
         
         System.out.println("\n\n");
         
-        String password = "P3Epe3P0oPO0-013177";
+        String password = "   abcdefghijklmnopqrstuvwxyz   ";
         
+        // Testing
+        System.out.println("Original:                          " + password);
+        System.out.println("RemoveWhitespaceAndConvertToUpper: " + kevin.removeWhitespaceAndConvertToUpper(password));
+        // Subsitute needs uppercase chars.
+        System.out.println("Substitute:                        " + kevin.substitute(kevin.removeWhitespaceAndConvertToUpper(password)));
+        System.out.println("SwapHalfsForEncrypt:               " + kevin.swapHalfsForEncrypt(kevin.substitute(kevin.removeWhitespaceAndConvertToUpper(password))));
+        System.out.println("SwapFirst2WithLast2:               " + kevin.swapFirst2WithLast2(kevin.swapHalfsForEncrypt(kevin.substitute(kevin.removeWhitespaceAndConvertToUpper(password)))));
+        System.out.println("SwapMiddleChars:                   " + kevin.swapMiddleChars(kevin.swapFirst2WithLast2(kevin.swapHalfsForEncrypt(kevin.substitute(kevin.removeWhitespaceAndConvertToUpper(password))))));
+        System.out.println("Encrypt:                           " + kevin.encrypt(password));
         
-        System.out.println(kevin.encrypt(password));
+        System.out.println("\n\n");
+        
+        System.out.println(kevin);
     }
 }

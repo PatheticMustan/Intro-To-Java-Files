@@ -37,12 +37,13 @@ public class UserInfo {
             .replaceAll("O", "*")
             .replaceAll("P", "#")
             .replaceAll("R", "&")
-            .replaceAll("S", "$")
+            .replaceAll("S", "\\$")
             .replaceAll("T", "+")
             .replaceAll("V", "^")
             .replaceAll("X", "%")
             .replaceAll(" ", "_");
     }
+    
     public String swapHalfsForEncrypt(String s) {
         int len = s.length();
         int half = (int)Math.ceil(len / 2);
@@ -50,6 +51,7 @@ public class UserInfo {
             s.substring(half, len) +
             s.substring(0, half);
     }
+    
     public String swapFirst2WithLast2(String s) {
         int len = s.length();
         int half = (int)Math.ceil(len / 2);
@@ -58,6 +60,7 @@ public class UserInfo {
             s.substring(2, len - 2) +
             s.substring(0, 2);
     }
+    
     public String swapMiddleChars(String s) {
         int len = s.length();
         int half = (int)Math.ceil(len / 2);
@@ -66,6 +69,14 @@ public class UserInfo {
             s.substring(half, half + 2) +
             s.substring(half - 2, half) +
             s.substring(half + 2, len);
-
+    }
+    
+    
+    
+    // toString
+    public String toString() {
+        return
+            "Name:    " + name + "\n" +
+            "Address: " + address + "\n";
     }
 }
