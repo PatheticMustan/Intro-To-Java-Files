@@ -111,7 +111,6 @@ public class UserInfo {
     // swapFirst2WithLast2 takes a string, and swaps the first two characters with the last two characters.
     public String swapFirst2WithLast2(String s) {
         int len = s.length();
-        int half = (int)Math.ceil((float)len / 2);
         
         return
             s.substring(len - 2, len) +
