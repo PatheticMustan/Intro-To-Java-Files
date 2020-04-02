@@ -85,31 +85,35 @@ public class DuckDuckGoose {
         // JFrame is named suffering, because everybody knows JOptionPane is suffering
         JFrame suffering = new JFrame();
         
-        // get input, first # of cycle, then the # of people.
-        int cycle = Integer.parseInt(JOptionPane.showInputDialog(suffering, "Enter cycle number."));
-        int people = Integer.parseInt(JOptionPane.showInputDialog(suffering, "Enter participant number."));
-        
-        // init bool array, and fill it with true
-        boolean[] peopleArray = new boolean[people];
-        for (int i=0; i<peopleArray.length; i++) {
-            peopleArray[i] = true;
-        }
-        
-        // display the result
-        // AND NOWWWW WHOOOO WINS HER? NUMBER 66! AHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHh
-        JOptionPane.showMessageDialog(suffering, "The winner is... NUMBER " + playGame(peopleArray, cycle) + "! AHHHHHH!");
+        do {
+            // get input, first # of cycle, then the # of people.
+            int cycle = Integer.parseInt(JOptionPane.showInputDialog(suffering, "Enter cycle number."));
+            int people = Integer.parseInt(JOptionPane.showInputDialog(suffering, "Enter participant number."));
+            
+            // init bool array, and fill it with true
+            boolean[] peopleArray = new boolean[people];
+            for (int i=0; i<peopleArray.length; i++) {
+                peopleArray[i] = true;
+            }
+            
+            // display the result
+            // AND NOWWWW WHOOOO WINS HER? NUMBER 66! AHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHh
+            JOptionPane.showMessageDialog(suffering, "The winner is... NUMBER " + playGame(peopleArray, cycle) + "! AHHHHHH!");
+        } while (JOptionPane.showInputDialog(suffering, "Try again? Type 'yes'.").equals("yes"));
     }
 
 
-
+    
     public static int playGame(boolean[] array, int cycle) {
         // We need to keep track of the current index, and how far along we are on the cycle.
         int currentIndex = 0;
         int cycleProgression = 0;
         
-        // so the idea for ((array.length-1)*cycle) is that every person eliminated 
+        // so the idea for ((array.length-1)*cycle) is that we need to eliminate array.length-1 people,
+        // and for each person eliminated, we need to go over cycle alive people. The variable i represents
+        // the alive people we went over.
         for (int i=0; i<((array.length-1)*cycle); i++) {
-            // run to next user
+            // if the user is eliminated already, decrement i, as if we never incremented it.
             if (array[currentIndex] == false) i--;
             else cycleProgression++;
             
