@@ -23,7 +23,7 @@
  * 
  * 
  * 
- * PROJECTS MUST BE UPLOADED TO DROPBOX BY FRIDAY, APRIL 3 @ 11:59PM. The folder name for this project MUST read “Project #3”,
+ * PROJECTS MUST BE UPLOADED TO DROPBOX BY FRIDAY, APRIL 3 @ 11:59PM. The folder name for this project MUST read "Project #3",
  *      and include all .java files related to this project.
  * 
  * POINTS WILL BE DEDUCTED PER DAY FOR LATENESS!!!
@@ -77,19 +77,32 @@
 
 // import JOptionPane
 import javax.swing.*;
+// allows me to stringify arrays to make it pretty.
+import java.util.Arrays;
 
 public class DuckDuckGoose {
     public static void main(String[] args) {
         // JFrame is named suffering, because everybody knows JOptionPane is suffering
         JFrame suffering = new JFrame();
-
-        int cycle = JOptionPane.showInputDialog(suffering, "Enter a new name");
-        System.out.println(cycle);
+        
+        // get input, first # of people, then cycle #.
+        int people = Integer.parseInt(JOptionPane.showInputDialog(suffering, "Enter participant number."));
+        int cycle = Integer.parseInt(JOptionPane.showInputDialog(suffering, "Enter cycle number."));
+        
+        // init bool array, and fill it with true
+        boolean[] peopleArray = new boolean[people];
+        for (int i=0; i<peopleArray.length; i++) {
+            peopleArray[i] = true;
+        }
+        
+        // display the result
+        JOptionPane.showMessageDialog(suffering, "The winner is... NUMBER " + playGame() + "! AHHHHHH!");
     }
 
 
 
     public static int playGame(boolean[] array, int cycle) {
         // do stuff
+        return 0;
     }
 }
