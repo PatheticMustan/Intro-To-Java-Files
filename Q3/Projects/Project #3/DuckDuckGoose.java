@@ -85,9 +85,9 @@ public class DuckDuckGoose {
         // JFrame is named suffering, because everybody knows JOptionPane is suffering
         JFrame suffering = new JFrame();
         
-        // get input, first # of people, then cycle #.
-        int people = Integer.parseInt(JOptionPane.showInputDialog(suffering, "Enter participant number."));
+        // get input, first # of cycle, then the # of people.
         int cycle = Integer.parseInt(JOptionPane.showInputDialog(suffering, "Enter cycle number."));
+        int people = Integer.parseInt(JOptionPane.showInputDialog(suffering, "Enter participant number."));
         
         // init bool array, and fill it with true
         boolean[] peopleArray = new boolean[people];
@@ -96,13 +96,37 @@ public class DuckDuckGoose {
         }
         
         // display the result
-        JOptionPane.showMessageDialog(suffering, "The winner is... NUMBER " + playGame() + "! AHHHHHH!");
+        // AND NOWWWW WHOOOO WINS HER? NUMBER 66! AHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHh
+        JOptionPane.showMessageDialog(suffering, "The winner is... NUMBER " + playGame(peopleArray, cycle) + "! AHHHHHH!");
     }
 
 
 
     public static int playGame(boolean[] array, int cycle) {
-        // do stuff
-        return 0;
+        // We need to keep track of the current index, and how far along we are on the cycle.
+        int currentIndex = 0;
+        int cycleProgression = 0;
+        
+        // so the idea for ((array.length-1)*cycle) is that every person eliminated 
+        for (int i=0; i<((array.length-1)*cycle); i++) {
+            // run to next user
+            if (array[currentIndex] == false) i--;
+            else cycleProgression++;
+            
+            // ELIMINATION!
+            if (cycleProgression % cycle == 0) array[currentIndex] = false;
+            
+            // Go on to the next valid index, wrapping around to 0 every time it gets too high.
+            currentIndex = (currentIndex + 1) % array.length;
+        }
+        
+        // return the first true in the array.
+        int result = 0;
+        for (int o=0; o<array.length; o++) {
+            if (array[o]) return o;
+        }
+        
+        // it would only return -1 if the entire array was false, which shouldn't happen.
+        return -1;
     }
 }
