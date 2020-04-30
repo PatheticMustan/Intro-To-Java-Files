@@ -3,7 +3,7 @@
 I'm uploading my files for java. Maybe someday I'll write the READMEs.
 This is proof I didn't just copy paste all my code, I guess.
 
-I'm PatheticMustan, patheticmustan@gmail.com, Natsumi#2385, all of those are probably me. I have a keybase account that does in fact verify that I am me. It should be right [here](https://gist.github.com/PatheticMustan/69c6b7786177d79843d56f956f0649d1).
+I'm PatheticMustan, patheticmustan@gmail.com, Natsumi#0637, all of those are probably me. I have a keybase account that does in fact verify that I am me. It should be right [here](https://gist.github.com/PatheticMustan/69c6b7786177d79843d56f956f0649d1).
 
 ## TODO
 * Document all the lessons, and add README's because those look pretty.
@@ -15,6 +15,8 @@ I'm PatheticMustan, patheticmustan@gmail.com, Natsumi#2385, all of those are pro
 
 * Show what grade I got for each project, and apply fixes.
     - Honestly the only reason I got a B- in the first quarter was all because of this dumb card-sorting project that didn't even use Java. I got a 12/24 because I didn't do enough card sorting fast enough. Still salty about that one.
+
+* Document all the lessons/projects up to Q4, what a backlog.
 
 ## Finished Tasks
 * Standardize UTF-8 and 4 Spaces on all my files.
