@@ -14,25 +14,34 @@
  *             § The sums of the elements in each row, column, and the two diagonals are equal
  */
 
-// import shit
-import org.apache.commons.lang3.StringUtils;
+// import stuff
 
 public class SquareMatrix {
     private int[][] data;
+    
+    
     
     public SquareMatrix(int size) {
         data = new int[size][size];
         // maybe I should fill it with zeros???
     }
     
-    // GS data, because we need both accessor AND mutator.
+    
+    
+    // GS data, but I'm not sure we need setData......
     public int[][] getData() {return data;}
     public void setData(int[][] newData) {data = newData;}
+    
+    
     
     // ezpz
     public void add(int i, int row, int column) {data[row][column] = i;}
     
+    
+    
     public boolean isMagic() {
+        int n = data.length;
+        
         ///////////////////////////////////////////////////
         // The user entered n2 numbers for some number n //
         ///////////////////////////////////////////////////
@@ -50,7 +59,7 @@ public class SquareMatrix {
         //////////////////////////////////////////////////////
         for (int[] row : data) {
             for (int num : row) {
-                if (1 > num || num > (n * n)) {
+                if (1 > num || num > n * n) {
                     return false;
                 }
             }
@@ -60,7 +69,7 @@ public class SquareMatrix {
         ///////////////////////////////////////////////////////////
         // Each of the numbers occurs exactly once in the matrix //
         ///////////////////////////////////////////////////////////
-        for (int i=0; i<data.length*data.length; i++) {
+        for (int i=0; i<n*n; i++) {
             
         }
         // convert array to map
@@ -79,6 +88,25 @@ public class SquareMatrix {
     }
     
     public String toString() {
+        int n = data.length;
+
         
+        // https://en.wikipedia.org/wiki/Beelzebub
+        String beelzebub = "";
+        
+        for (int[] row : data) {
+            for (int num : row) {
+                
+                // crisp, clean, lock boys, it doesn't get more horsepoo than that 
+                int zeroPadCount = (n*n+"").length() - (num+"").length(); // highest num length - current num length
+                // we must regularly give offerings, or he will devour all
+                String offering = String.format("%0"+zeroPadCount+"d", num);
+                
+                beelzebub += offering;
+            }
+        }
+        
+        // once he is satisfied he shall slumber
+        return beelzebub;
     }
 }
