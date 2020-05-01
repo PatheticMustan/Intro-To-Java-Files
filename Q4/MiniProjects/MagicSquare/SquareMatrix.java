@@ -17,10 +17,12 @@
 // import stuff
 
 public class SquareMatrix {
+    // woah it's a private instance variable, never saw that before
     private int[][] data;
     
     
     
+    // constructor, duh
     public SquareMatrix(int size) {
         data = new int[size][size];
         // maybe I should fill it with zeros???
@@ -34,11 +36,12 @@ public class SquareMatrix {
     
     
     
-    // ezpz
+    // ezpz one liner
     public void add(int i, int row, int column) {data[row][column] = i;}
     
     
     
+    // I mean squares are magic, but the real magic lies in Friendship, because "Friendship is magic™".
     public boolean isMagic() {
         int n = data.length;
         
@@ -102,11 +105,14 @@ public class SquareMatrix {
                 // we must regularly give offerings, or he will devour all
                 String offering = String.format("%0"+zeroPadCount+"d", num);
                 
-                beelzebub += offering;
+                // here we witness a space in it's natural habitat
+                beelzebub += offering + " ";
             }
+            // OH GOD HE'S ONTO US AHHHH HIS MINIONS HAVE ARROWS THEY'RE SHOOTING NEWLINES NO NOT THE NEWLINEEEEES
+            beelzebub += "\n";
         }
         
-        // once he is satisfied he shall slumber
+        // once he is satisfied he shall slumber. goodnight moon!
         return beelzebub;
     }
 }
