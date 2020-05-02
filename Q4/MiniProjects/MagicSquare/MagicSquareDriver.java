@@ -58,8 +58,11 @@ public class MagicSquareDriver {
                     matrix.add(Integer.parseInt(stringInput[o]), i, o);
                 }
             }
-        
-            // test toString()
+            
+            // isMagic?
+            JOptionPane.showMessageDialog(shizune, "The matrix is " + (matrix.isMagic()? "very" : "not") + " magical!");
+            
+            // Spit out toString
             JOptionPane.showMessageDialog(shizune, matrix);
         } while (JOptionPane.showConfirmDialog(shizune, "Do you wish to exit?", "Exit", JOptionPane.YES_NO_OPTION) == 1);
     }
