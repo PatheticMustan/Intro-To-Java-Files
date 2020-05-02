@@ -72,12 +72,24 @@ public class SquareMatrix {
         ///////////////////////////////////////////////////////////
         // Each of the numbers occurs exactly once in the matrix //
         ///////////////////////////////////////////////////////////
-        for (int i=0; i<n*n; i++) {
-            
+        // I'm gonna do what's called a pro gamer move
+        // instead of looping over the n sized array n times, I'll just convert the array to a string, then check if it contains (i+",").
+        String arrayButNowString = "";
+        
+        // convert 2d array to 1d vibrating string
+        // the universe is made up of tiny little vibrating arrayButNowString's. I call it: "String Theory"!
+        for (int[] row : data) {
+            for (int num : row) {
+                arrayButNowString += num + ",";
+            }
         }
-        // convert array to map
-        // check if map contained size*size elements
-        // if not return false
+        
+        // now check if it contains the good stuff
+        for (int i=0; i<n*n; i++) {
+            if (arrayButNowString.contains((i+1) + ",") == false) return false;
+        }
+        
+        // this works because it's supposed
         
         
         ///////////////////////////////////////////////////////////////////////////////////
