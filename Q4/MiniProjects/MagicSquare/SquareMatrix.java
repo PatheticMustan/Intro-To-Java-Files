@@ -89,7 +89,10 @@ public class SquareMatrix {
             if (arrayButNowString.contains((i+1) + ",") == false) return false;
         }
         
-        // this works because it's supposed
+        // this works because it's supposed to contain exactly n*n elements, all within the valid range of (1-n*n).
+        // It SHOULDN'T fail to find any of the numbers, unless one of them was missing.
+        // the only reason it'd be missing would be because there's another dupe.
+        // thus, if we can find all numbers from (1-n*n) in our n*n array, we can say with certainty that there are no dupelicates.
         
         
         ///////////////////////////////////////////////////////////////////////////////////

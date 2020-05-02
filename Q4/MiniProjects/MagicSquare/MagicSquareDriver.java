@@ -42,16 +42,6 @@ public class MagicSquareDriver {
                         JOptionPane.showMessageDialog(shizune, "Invalid size! " + stringInput.length + " elements entered but " + size + " required.");
                     }
                 } while(stringInput.length != size);
-                // now that that's done, we need to put it into the matrix
-                
-                
-                
-                // convert the matrix into an int array
-                int[] intInput = new int[size];
-                for (int o=0; o<size; o++) {
-                    // we could add another check to see if it's a valid integer, but will we really?
-                    // no, I don't think I will
-                }
                 
                 // now we take it and mush it into the matrix
                 for (int o=0; o<size; o++) {
