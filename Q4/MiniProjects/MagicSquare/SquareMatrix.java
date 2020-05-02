@@ -99,11 +99,10 @@ public class SquareMatrix {
         
         for (int[] row : data) {
             for (int num : row) {
-                
+                System.out.println(num);
                 // crisp, clean, lock boys, it doesn't get more horsepoo than that 
-                int zeroPadCount = (n*n+"").length() - (num+"").length(); // highest num length - current num length
                 // we must regularly give offerings, or he will devour all
-                String offering = String.format("%0"+zeroPadCount+"d", num);
+                String offering = String.format("%0"+((n*n+"").length())+"d", num);
                 
                 // here we witness a space in it's natural habitat
                 beelzebub += offering + " ";

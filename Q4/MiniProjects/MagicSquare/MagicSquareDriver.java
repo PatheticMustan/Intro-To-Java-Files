@@ -33,7 +33,8 @@ public class MagicSquareDriver {
             SquareMatrix matrix = new SquareMatrix(size);
             
             for (int i=0; i<size; i++) {
-                // stupid input verification
+                // stupid input verification, get the user's input (1,2,3,4,5)
+                // we don't know if it'll be valid, so don't specify the size of the array yet
                 String[] stringInput;
                 do {
                     stringInput = JOptionPane.showInputDialog(shizune, "Enter Row #" + (i + 1) + ", with " + size + " elements, split by commas.").split(",");
@@ -41,7 +42,21 @@ public class MagicSquareDriver {
                         JOptionPane.showMessageDialog(shizune, "Invalid size! " + stringInput.length + " elements entered but " + size + " required.");
                     }
                 } while(stringInput.length != size);
+                // now that that's done, we need to put it into the matrix
                 
+                
+                
+                // convert the matrix into an int array
+                int[] intInput = new int[size];
+                for (int o=0; o<size; o++) {
+                    // we could add another check to see if it's a valid integer, but will we really?
+                    // no, I don't think I will
+                }
+                
+                // now we take it and mush it into the matrix
+                for (int o=0; o<size; o++) {
+                    matrix.add(Integer.parseInt(stringInput[o]), i, o);
+                }
             }
         
             // test toString()
