@@ -44,7 +44,7 @@ public class AboutMe {
             e.printStackTrace();
         }
         
-        JFrame frame = new JFrame("AboutMe");
+        JFrame frame = new JFrame("About Me");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         AboutMePanel panel = new AboutMePanel();
