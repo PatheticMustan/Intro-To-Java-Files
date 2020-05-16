@@ -19,22 +19,46 @@ public class AboutMePanel extends JPanel {
         mainLabel = new JLabel("Hi! I'm Kevin Wang!");
         mainLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
         add(mainLabel);
-
-        setBackground(Color.yellow);
+        
+        // default color
+        setBackground(Color.cyan);
+        
+        
+        
+        JButton button;
         
         // First button
-        buttonMyName = ColorButton("My name is...", Color.yellow);
-        buttonMyName.addActionListener(new ButtonListener("Kevin Wang!"));
-        add(buttonMyName);
+        button = ColorButton("My name is...");
+        button.addActionListener(new ButtonListener("Kevin Wang!", Color.yellow));
+        add(button);
+        
+        // Second button
+        button = ColorButton("My name is...");
+        button.addActionListener(new ButtonListener("Kevin Wang!", Color.yellow));
+        add(button);
+        
+        // Third button
+        button = ColorButton("My name is...");
+        button.addActionListener(new ButtonListener("Kevin Wang!", Color.yellow));
+        add(button);
+        
+        // Fourth button
+        button = ColorButton("My name is...");
+        button.addActionListener(new ButtonListener("Kevin Wang!", Color.yellow));
+        add(button);
+        
+        // Fifth button
+        button = ColorButton("My name is...");
+        button.addActionListener(new ButtonListener("Kevin Wang!", Color.yellow));
+        add(button);
 
         setPreferredSize(new Dimension(300, 300));
-        setBackground(Color.cyan);
     }
     
     
     
     // simplify button making
-    public JButton ColorButton(String question, Color color) {
+    public JButton ColorButton(String question) {
         // make the button
         JButton button = new JButton(question);
         // center it and add event listener
@@ -44,16 +68,19 @@ public class AboutMePanel extends JPanel {
     }
     
     
-    
+    // write once, use 5 times
     private class ButtonListener implements ActionListener {
         private String answer;
+        private Color color;
         // constructor
-        public ButtonListener(String answer) {
+        public ButtonListener(String answer, Color color) {
             this.answer = answer;
+            this.color = color;
         }
         
         public void actionPerformed(ActionEvent event) {
             mainLabel.setText(this.answer);
+            setBackground(this.color);
         }
     }
 }
