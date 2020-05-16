@@ -1,8 +1,15 @@
-/* thinking
+/* AboutMePanel.java            by Kevin Wang
  * 
- * Let's make a new class
+ * I've made some helper functions to make the whole thing shorter, and simpler.
+ * 
+ * public JButton ColorButton(String question, String answer, Color backgroundColor, Color buttonColor, ImageIcon image)
+ * 
+ * and
+ * 
+ * public ButtonListener(String answer, Color color, ImageIcon icon)
  */
 
+// import
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
