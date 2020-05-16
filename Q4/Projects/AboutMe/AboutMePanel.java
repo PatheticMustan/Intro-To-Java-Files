@@ -21,7 +21,7 @@ public class AboutMePanel extends JPanel {
         add(mainLabel);
         
         // default color
-        setBackground(Color.cyan);
+        setBackground(Color.white);
         
         
         // First button
@@ -37,7 +37,7 @@ public class AboutMePanel extends JPanel {
         add(ColorButton("My favorite animals are...", "Otters!", Color.red));
         
         // Fifth button
-        add(ColorButton("My name is...", "Kevin Wang!", Color.yellow));
+        add(ColorButton("Given rock, paper, or scissors, which would you pick?", "Rock. Always.", Color.pink));
 
         setPreferredSize(new Dimension(300, 300));
     }
