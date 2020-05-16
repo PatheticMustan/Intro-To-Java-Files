@@ -24,33 +24,20 @@ public class AboutMePanel extends JPanel {
         setBackground(Color.cyan);
         
         
-        
-        JButton button;
-        
         // First button
-        button = ColorButton("My name is...");
-        button.addActionListener(new ButtonListener("Kevin Wang!", Color.yellow));
-        add(button);
+        add(ColorButton("My name is...", "Kevin Wang", Color.yellow));
         
         // Second button
-        button = ColorButton("My name is...");
-        button.addActionListener(new ButtonListener("Kevin Wang!", Color.yellow));
-        add(button);
+        add(ColorButton("My favorite color is...", "Green!", Color.green));
         
         // Third button
-        button = ColorButton("My name is...");
-        button.addActionListener(new ButtonListener("Kevin Wang!", Color.yellow));
-        add(button);
+        add(ColorButton("My favorite programming language is...", "Javascript!", Color.cyan));
         
         // Fourth button
-        button = ColorButton("My name is...");
-        button.addActionListener(new ButtonListener("Kevin Wang!", Color.yellow));
-        add(button);
+        add(ColorButton("My favorite animals are...", "Otters!", Color.red));
         
         // Fifth button
-        button = ColorButton("My name is...");
-        button.addActionListener(new ButtonListener("Kevin Wang!", Color.yellow));
-        add(button);
+        add(ColorButton("My name is...", "Kevin Wang!", Color.yellow));
 
         setPreferredSize(new Dimension(300, 300));
     }
@@ -58,12 +45,13 @@ public class AboutMePanel extends JPanel {
     
     
     // simplify button making
-    public JButton ColorButton(String question) {
+    public JButton ColorButton(String question, String answer, Color color) {
         // make the button
         JButton button = new JButton(question);
+        button.setBackground(color);
         // center it and add event listener
         button.setAlignmentX(Component.CENTER_ALIGNMENT);
-        
+        button.addActionListener(new ButtonListener(answer, color));
         return button;
     }
     
@@ -72,6 +60,7 @@ public class AboutMePanel extends JPanel {
     private class ButtonListener implements ActionListener {
         private String answer;
         private Color color;
+        
         // constructor
         public ButtonListener(String answer, Color color) {
             this.answer = answer;
