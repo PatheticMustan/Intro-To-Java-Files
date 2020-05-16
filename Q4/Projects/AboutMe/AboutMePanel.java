@@ -23,8 +23,8 @@ public class AboutMePanel extends JPanel {
         setBackground(Color.yellow);
         
         // First button
-        buttonMyName = ColorButton("My name is...", "Kevin Wang!", Color.yellow);
-        buttonMyName.addActionListener(new ButtonListener());
+        buttonMyName = ColorButton("My name is...", Color.yellow);
+        buttonMyName.addActionListener(new ButtonListener("Kevin Wang!"));
         add(buttonMyName);
 
         setPreferredSize(new Dimension(300, 300));
@@ -34,7 +34,7 @@ public class AboutMePanel extends JPanel {
     
     
     // simplify button making
-    public JButton ColorButton(String question, String answer, Color color) {
+    public JButton ColorButton(String question, Color color) {
         // make the button
         JButton button = new JButton(question);
         // center it and add event listener
@@ -46,8 +46,14 @@ public class AboutMePanel extends JPanel {
     
     
     private class ButtonListener implements ActionListener {
+        private String answer;
+        // constructor
+        public ButtonListener(String answer) {
+            this.answer = answer;
+        }
+        
         public void actionPerformed(ActionEvent event) {
-            mainLabel.setText("Java is a shit language!");
+            mainLabel.setText(this.answer);
         }
     }
 }
