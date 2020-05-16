@@ -21,8 +21,11 @@ public class AboutMePanel extends JPanel {
         add(mainLabel);
 
         setBackground(Color.yellow);
-
-        add(buttonMyName = ColorButton("My name is...", "Kevin Wang!", ButtonListener));
+        
+        // First button
+        buttonMyName = ColorButton("My name is...", "Kevin Wang!", Color.yellow);
+        buttonMyName.addActionListener(new ButtonListener());
+        add(buttonMyName);
 
         setPreferredSize(new Dimension(300, 300));
         setBackground(Color.cyan);
@@ -31,12 +34,12 @@ public class AboutMePanel extends JPanel {
     
     
     // simplify button making
-    public JButton ColorButton(String question, String answer, ActionListener listener) {
+    public JButton ColorButton(String question, String answer, Color color) {
         // make the button
         JButton button = new JButton(question);
         // center it and add event listener
         button.setAlignmentX(Component.CENTER_ALIGNMENT);
-        button.addActionListener(new listener());
+        
         return button;
     }
     
