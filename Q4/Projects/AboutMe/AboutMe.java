@@ -40,16 +40,16 @@ import javax.swing.*;
 public class AboutMe {
     public static void main(String[] args) {
         try {
-            UIManager.setLookAndFeel( UIManager.getCrossPlatformLookAndFeelClassName() );
+            UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
         } catch (Exception e) {
             e.printStackTrace();
         }
-        
+
         JFrame frame = new JFrame("About Me");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        
+
         AboutMePanel panel = new AboutMePanel();
-        
+
         frame.getContentPane().add(panel);
         frame.pack();
         frame.setVisible(true);
