@@ -25,33 +25,58 @@ public class AboutMePanel extends JPanel {
         
         
         // First button
-        add(ColorButton("My name is...", "Kevin Wang", Color.yellow));
+        add(ColorButton(
+                        "My name is...",
+                        "Kevin Wang",
+                        Color.yellow,
+                        Color.pink
+                       ));
         
         // Second button
-        add(ColorButton("My favorite color is...", "Green!", Color.green));
+        add(ColorButton(
+                        "My favorite color is...",
+                        "Green!",
+                        Color.green,
+                        Color.yellow
+                       ));
         
         // Third button
-        add(ColorButton("My favorite programming language is...", "Javascript!", Color.cyan));
+        add(ColorButton(
+                        "My favorite programming language is...",
+                        "Javascript!",
+                        Color.cyan,
+                        Color.green
+                       ));
         
         // Fourth button
-        add(ColorButton("My favorite animals are...", "Otters!", Color.red));
+        add(ColorButton(
+                        "My favorite animals are...",
+                        "Otters!",
+                        Color.red,
+                        Color.cyan
+                       ));
         
         // Fifth button
-        add(ColorButton("Given rock, paper, or scissors, which would you pick?", "Rock. Always.", Color.pink));
+        add(ColorButton(
+                        "Given rock, paper, or scissors, which would you pick?",
+                        "Rock. Always.",
+                        Color.pink,
+                        Color.red
+                       ));
 
-        setPreferredSize(new Dimension(300, 300));
+        setPreferredSize(new Dimension(400, 500));
     }
     
     
     
     // simplify button making
-    public JButton ColorButton(String question, String answer, Color color) {
+    public JButton ColorButton(String question, String answer, Color backgroundColor, Color buttonColor) {
         // make the button
         JButton button = new JButton(question);
-        button.setBackground(color);
+        button.setBackground(buttonColor);
         // center it and add event listener
         button.setAlignmentX(Component.CENTER_ALIGNMENT);
-        button.addActionListener(new ButtonListener(answer, color));
+        button.addActionListener(new ButtonListener(answer, backgroundColor));
         return button;
     }
     
@@ -72,4 +97,5 @@ public class AboutMePanel extends JPanel {
             setBackground(this.color);
         }
     }
+    
 }
