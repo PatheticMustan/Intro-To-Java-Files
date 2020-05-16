@@ -17,9 +17,6 @@ import javax.swing.*;
 public class AboutMePanel extends JPanel {
     private JLabel mainLabel;
 
-    private JButton buttonMyName;
-
-
     public AboutMePanel() {
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         
