@@ -9,6 +9,7 @@ import javax.swing.*;
 public class RayTracer extends JPanel {
     private int width = 512;
     private int height = 512;
+    private int modifier = 2;
 
     public void paint(Graphics g) {
         BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
@@ -16,15 +17,9 @@ public class RayTracer extends JPanel {
         // draw image
         for (int i = 0; i < width; i++) {
             for (int o = 0; o < height; o++) {
-                image.setRGB(i, o, toColor(i - o, i, o));
+                image.setRGB(i, o, toColor(i - o + modifier, i, o));
+                modifier = modifier + 78;
             }
-        }
-
-        // write to file, in case you wanna see it later
-        try {
-            ImageIO.write(image, "png", new File("rt.png"));
-        } catch (IOException e) {
-            e.printStackTrace();
         }
 
         // display it on the frame
