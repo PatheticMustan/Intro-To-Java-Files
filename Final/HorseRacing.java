@@ -64,7 +64,7 @@ public class HorseRacing extends JPanel {
         super.paint(g);
         
         if (gameOver == false) {
-            // white background
+            // yellow background
             g.setColor(new Color(228, 211, 27));
             g.fillRect(0, 0, width, height);
             
