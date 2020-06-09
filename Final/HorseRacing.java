@@ -5,7 +5,7 @@ import java.io.*;
 
 import javax.swing.*;
 
-public class RayTracer extends JPanel {
+public class HorseRacing extends JPanel {
     private int width = 512;
     private int height = 512;
     private int modifier = 0;
@@ -17,33 +17,30 @@ public class RayTracer extends JPanel {
     
     public void paint(Graphics g) {
         BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
-
-        // draw image
-        for (int i = 0; i < width; i++) {
-            for (int o = 0; o < height; o++) {
-                image.setRGB(i, o, toColor((i/2)*(o/2), i/2, o/2));
-            }
-        }
+        Graphics2D g2d = image.createGraphics();
+        
+        // white background
+        g2d.setColor(new Color(255, 255, 255));
+        g2d.fillRect(0, 0, width, height);
+        
+        g2d.setColor(new Color(0, 0, 0));
+        g2d.setFont(new Font("Serif", Font.BOLD, 20));
+        g2d.drawString("Test", 30, 30);
+        
+        g2d.dispose();
+        
 
         // display it on the frame
         g.drawImage(image, 0, 0, null);
     }
 
-    // convert rgb to proper format
-    private static int toColor(int r, int g, int b) {
-        return ((r % 256) << 16) | ((g % 256) << 8) | (b % 256);
-    }
-
     public static void main(String[] args) {
-        RayTracer rt = new RayTracer();
+        HorseRacing hr = new HorseRacing();
         JFrame frame = new JFrame();
-        frame.getContentPane().add(rt);
-
-
-
+        frame.getContentPane().add(hr);
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(rt.width, rt.height);
+        frame.setSize(hr.width, hr.height);
         frame.setVisible(true);
     }
 }
