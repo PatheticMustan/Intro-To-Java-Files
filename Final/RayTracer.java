@@ -3,22 +3,25 @@ import java.awt.image.*;
 
 import java.io.*;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 
 public class RayTracer extends JPanel {
     private int width = 512;
     private int height = 512;
-    private int modifier = 2;
-
+    private int modifier = 0;
+    
+    public void update(Graphics g) {
+        paint(g);
+        modifier += 1;
+    }   
+    
     public void paint(Graphics g) {
         BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
 
         // draw image
         for (int i = 0; i < width; i++) {
             for (int o = 0; o < height; o++) {
-                image.setRGB(i, o, toColor(i - o + modifier, i, o));
-                modifier = modifier + 78;
+                image.setRGB(i, o, toColor((i/2)*(o/2), i/2, o/2));
             }
         }
 
