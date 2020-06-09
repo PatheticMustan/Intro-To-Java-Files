@@ -27,6 +27,7 @@ public class HorseRacing extends JPanel {
     
     private Random random;
     private BufferedImage horseImage;
+    private BufferedImage blackHorseImage;
     
     public int[] distances;
     
@@ -45,6 +46,11 @@ public class HorseRacing extends JPanel {
         // import horse image
         try {
             horseImage = ImageIO.read(new File("horse.png"));
+        } catch (IOException e) {
+            System.out.println(e);
+        }
+        try {
+            blackHorseImage = ImageIO.read(new File("black_horse.png"));
         } catch (IOException e) {
             System.out.println(e);
         }
@@ -80,7 +86,7 @@ public class HorseRacing extends JPanel {
             
             // draw horses
             for (int i = 0; i < distances.length; i++) {
-                g.drawImage(horseImage, distances[i], 100 + (50 * i), null);
+                g.drawImage((i==0? blackHorseImage : horseImage), distances[i], 100 + (50 * i), null);
             }
             
             // advance horses
