@@ -1,44 +1,41 @@
 import java.util.Scanner;
 
 public class Lesson12 {
-    /*
-     * Modify the quadratic program to determine the nature of the roots for any a, b, and c
-     * (double values). If they are real, display them. Otherwise, display �no real roots.�
-     * If you finish this, determine a way to display the roots if they are imaginary.
-     */
-    public static void main (String[] args) {
-        int a, b, c;  // ax^2 + bx + c
-        double discriminant, root1, root2;
-        
-        Scanner scan = new Scanner (System.in);
-        
-        System.out.print ("Enter the coefficient of x squared: ");
-        a = scan.nextInt();
-        
-        System.out.print ("Enter the coefficient of x: ");
-        b = scan.nextInt();
-        
-        System.out.print ("Enter the constant: ");
-        c = scan.nextInt();
-        
-        // Use the quadratic formula to compute the roots.
-        // Assumes a positive discriminant.
-        
-        discriminant = Math.pow(b, 2) - (4 * a * c);
-        System.out.println("Discriminator: " + discriminant);
-        
-        if (discriminant > 0) {
-            root1 = ((-1 * b) + Math.sqrt(discriminant)) / (2 * a);
-            root2 = ((-1 * b) - Math.sqrt(discriminant)) / (2 * a);
-            System.out.println ("Root #1: " + root1);
-            System.out.println ("Root #2: " + root2);
-        } else {
-            if (discriminant == 0) {
-                root1 = ((-1 * b) + Math.sqrt(discriminant)) / (2 * a);
-                System.out.println ("Root #1: " + root1);
-            } else {
-                System.out.println("No Real Roots!");
-            }
-        }
-    }
+	public static void main (String[] args) {
+		int a, b, c;  // ax^2 + bx + c
+		double discriminant, root1, root2;
+		
+		Scanner sc = new Scanner (System.in);
+		
+		System.out.print ("Enter the coefficient of x squared: ");
+		a = sc.nextInt();
+		
+		System.out.print ("Enter the coefficient of x: ");
+		b = sc.nextInt();
+		
+		System.out.print ("Enter the constant: ");
+		c = sc.nextInt();
+		
+		// Use the quadratic formula to compute the roots.
+		// Assumes a positive discriminant.
+		
+		discriminant = Math.pow(b, 2) - (4 * a * c);
+		System.out.println("Discriminator: " + discriminant);
+		
+		if (discriminant > 0) {
+			root1 = ((-1 * b) + Math.sqrt(discriminant)) / (2 * a);
+			root2 = ((-1 * b) - Math.sqrt(discriminant)) / (2 * a);
+			System.out.println ("Root #1: " + root1);
+			System.out.println ("Root #2: " + root2);
+		} else {
+			if (discriminant == 0) {
+				root1 = ((-1 * b) + Math.sqrt(discriminant)) / (2 * a);
+				System.out.println ("Root #1: " + root1);
+			} else {
+				System.out.println("No Real Roots!");
+			}
+		}
+		
+		sc.close();
+	}
 }
